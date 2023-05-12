@@ -13,7 +13,7 @@ Monty Interpreter is a tool designed to parse and interpret [Monty bytecode](#mo
 - [Testing](#testing)
 - [Author](#author)
 
-\## Compilation & Execution
+# Compilation & Execution
 
 Use the following command to compile the Monty Interpreter:
 
@@ -23,11 +23,11 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 
 > :information_source: The program's output is printed on `stdout`, while error messages are printed on `stderr`.
 
-\## The Monty Language
+# The Monty Language
 
 Monty 0.98 is a scripting language compiled into Monty bytecodes, similar to Python. The goal of this project is to create an interpreter for Monty bytecode files.
 
-\## Monty Bytecode Files
+# Monty Bytecode Files
 
 Monty bytecode files have a `.m` extension. Each line in the file represents an instruction, which may have an optional argument. 
 
@@ -73,7 +73,7 @@ In case of any anomalies:
 - If no file is provided or more than one argument is given, print the error message "USAGE: monty file" on `stderr`, followed by a new line, and exit with status `EXIT_FAILURE`.
 - If it's not possible to open the file, print the error message "Error: Can't open file \<file\>" on `stderr`, followed by a new line, and exit with status `EXIT_FAILURE`.
 
-\## Supported Instructions
+# Supported Instructions
 
 The Monty Interpreter supports the following instructions:
 
@@ -85,14 +85,14 @@ The Monty Interpreter supports the following instructions:
 - `add`: Adds the top two elements of the stack.
 - `nop`: Does nothing.
 
-\## Exit Status
+# Exit Status
 
 The Monty Interpreter returns the following exit statuses:
 
 - `EXIT_SUCCESS` (0): Successful execution.
 - `EXIT_FAILURE` (1): Error occurred during execution.
 
-\## File Structure
+# File Structure
 
 The Monty code is organized into the following files:
 
@@ -101,10 +101,10 @@ The Monty code is organized into the following files:
 - `function.c`: Contains the function to execute Monty bytecode instructions.
 - `opcode.c`: Contains functions to manipulate the stack (push, pop, swap, etc.).
 
-\## Tests
+# Tests
 
 It is highly recommended to write a comprehensive set of tests to ensure the correctness of the Monty Interpreter. Collaborate with your team to create a test suite that covers all instructions and edge cases.
 
-\## Author
+# Author
 
 This Monty Interpreter was created by [Nairbh](https://github.com/nairbh).
