@@ -6,9 +6,9 @@ The Monty Interpreter is a software tool for interpreting Monty bytecode files. 
 
 Use the following command to compile the Monty Interpreter:
 
-\```shell
+```shell
 gcc -Wall -Werror -Wextra -pedantic *.c -o monty
-\```
+```
 
 > :information_source: The program's output is printed on `stdout`, while error messages are printed on `stderr`.
 
