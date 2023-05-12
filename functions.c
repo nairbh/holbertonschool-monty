@@ -17,13 +17,21 @@ void execute_instructions(FILE *file, stack_t **stack)
 	static const instruction_t instructions[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 
 	while ((read = getline(&line, &len, file)) != -1)
 	{
 		line_number++;
-		opcode = strtok(line, "\n\t\r ");
+
+		if (line[read - 1] == '\n')
+		line[read - 1] = '\0';
+		opcode = strtok(line, "\t\r ");
 
 		if (opcode == NULL)
 			continue;
@@ -43,9 +51,7 @@ void execute_instructions(FILE *file, stack_t **stack)
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			exit(EXIT_FAILURE);
 		}
-
 	}
-
 	free(line);
 }
 /**
@@ -112,7 +118,6 @@ int _isdigit(char *str)
 	}
 	return (1);
 }
-
 /**
  * open_file - Opens a file for reading and handles errors.
  *
@@ -126,7 +131,7 @@ FILE *open_file(char *filename)
 
 	if (file == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", filename);
+	fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 	return (file);

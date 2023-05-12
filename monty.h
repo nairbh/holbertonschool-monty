@@ -23,6 +23,11 @@ typedef struct instruction_s
 int _isdigit(char *str);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
 void add_node(stack_t **stack, int n);
 void free_stack(stack_t **stack);
 void execute_instructions(FILE *file, stack_t **stack);

@@ -38,5 +38,62 @@ void _pall(stack_t **stack, unsigned int line_number)
 	{
 		printf("%d\n", node->n);
 		node = node->next;
+
 	}
+}
+/**
+ * pint - Prints the value of the top element in the stack.
+ * @stack: Pointer to a pointer to the stack.
+ * @line_number: The line number where the function is called.
+ *
+ */
+void _pint(stack_t **stack, unsigned int line_number)
+{
+	if (!stack || !*stack)
+	{
+	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+	exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}
+/**
+ * _pop - Removes the top element from the stack.
+ * @stack: Pointer to a pointer to the stack.
+ * @line_number: The line number where the function is called.
+ *
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *swap;
+
+	if (*stack == NULL)
+	{
+	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+	exit(EXIT_FAILURE);
+	}
+
+	swap = (*stack)->next;
+	free(*stack);
+	*stack = swap;
+	if (*stack != NULL)
+	(*stack)->prev = NULL;
+}
+/**
+ * _swap - Swaps the positions of the top two elements in the stack.
+ * @stack: Pointer to a pointer to the stack.
+ * @line_number: The line number where the function is called.
+ */
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	int swap;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+	}
+
+	swap = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = swap;
 }
