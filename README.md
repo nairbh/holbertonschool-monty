@@ -51,7 +51,7 @@ You can execute it with:
 
 ```
 ./monty byte.m
-\```
+```
 
 Output:
 
@@ -61,14 +61,14 @@ Output:
 1
 ```
 
-\## The Monty Program
+# The Monty Program
 
 Run the Monty program with the following command:
 
 ```
 ./monty file.m
 ```
-In case of any anomalies:
+# In case of any anomalies:
 
 - If no file is provided or more than one argument is given, print the error message "USAGE: monty file" on `stderr`, followed by a new line, and exit with status `EXIT_FAILURE`.
 - If it's not possible to open the file, print the error message "Error: Can't open file \<file\>" on `stderr`, followed by a new line, and exit with status `EXIT_FAILURE`.
