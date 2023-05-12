@@ -1,6 +1,17 @@
-\# Monty Interpreter
+# Monty Interpreter
 
-The Monty Interpreter is a software tool for interpreting Monty bytecode files. Monty is a minimalistic programming language that relies on a unique stack with a specific set of instructions.
+Monty Interpreter is a tool designed to parse and interpret [Monty bytecode](#monty-bytecode-files) files. Monty is a minimalistic scripting language that operates on a unique stack and provides specific instructions for manipulating it.
+
+## Table of Contents
+- [Compilation & Execution](#compilation--execution)
+- [The Monty Language](#the-monty-language)
+- [Monty Bytecode Files](#monty-bytecode-files)
+- [The Monty Program](#the-monty-program)
+- [Supported Instructions](#supported-instructions)
+- [Exit Status](#exit-status)
+- [File Structure](#file-structure)
+- [Testing](#testing)
+- [Author](#author)
 
 \## Compilation & Execution
 
@@ -29,34 +40,34 @@ Characteristics of Monty bytecode files:
 
 For example, here is a Monty bytecode file named `byte.m`:
 
-\```shell
+```
 push 1
 push 2
 push 3
 pall
-\```
+```
 
 You can execute it with:
 
-\```shell
+```
 ./monty byte.m
 \```
 
 Output:
 
-\```shell
+```
 3
 2
 1
-\```
+```
 
 \## The Monty Program
 
 Run the Monty program with the following command:
 
-\```shell
+```
 ./monty file.m
-\```
+```
 In case of any anomalies:
 
 - If no file is provided or more than one argument is given, print the error message "USAGE: monty file" on `stderr`, followed by a new line, and exit with status `EXIT_FAILURE`.
