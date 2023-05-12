@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	stack_t *stack;
+	stack_t *stack = NULL;
 	FILE *file = open_file(argv[1]);
 
 	execute_instructions(file, &stack);
