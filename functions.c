@@ -36,6 +36,12 @@ void execute_instructions(FILE *file, stack_t **stack)
 				instructions[i].f(stack, line_number);
 				break;
 			}
+
+			if (instructions[i].opcode == NULL)
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+			exit(EXIT_FAILURE);
+		}
 		}
 	}
 
